@@ -4,7 +4,7 @@
       <video 
         id='video'
         class="videoBox"
-        :src='"../assets/"+videoName+".mp4"' 
+        :src='dataSrc[videoName]'
         muted 
         autoplay 
         controls
@@ -16,10 +16,10 @@
       </video>
     </div>
     <div class="list-wrap"
-      :style="{height: videoWidth*0.6*2+'px'}">
+      :style="{height: videoWidth*0.6+'px'}">
       <ul
         class="card-list"
-        :style="{top: '-50px',height: videoWidth*0.6*2+'px'}"
+        :style="{top: '-50px',height: videoWidth*0.6+'px'}"
       >
         <li class="card-item" :style="{margin: '0 2.5%',height: videoWidth*0.6}">
           <img src="../assets/quicklib.png" alt="">
@@ -77,7 +77,12 @@ export default {
     return {
       containerWidth: 900,
       videoWidth: 300,
-      videoName: 'quicklib'
+      videoName: 'quicklib',
+      dataSrc: {
+        quicklib: "https://7373-sss-9gd5kp6057cc6d9a-1305842996.tcb.qcloud.la/videos/quicklib.mp4?sign=00b0a01538999f2b5a2073469b0d2a2e&t=1648886651",
+        kairoz: "https://7373-sss-9gd5kp6057cc6d9a-1305842996.tcb.qcloud.la/videos/kairoz.mp4?sign=41b554f6ef9ecc4084ccd03e9973ea58&t=1648886439",
+        symbolEditor: "https://7373-sss-9gd5kp6057cc6d9a-1305842996.tcb.qcloud.la/videos/symbolEditor.mp4?sign=a4880c9b032ce16c4fe56d69d751b30c&t=1648886539"
+      }
     };
   },
   mounted() {
