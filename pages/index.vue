@@ -9,7 +9,7 @@
         autoplay 
         controls
         :width="videoWidth" 
-        :height="videoWidth*0.6"
+        :height="videoWidth*0.61"
         :style="{top: containerWidth*0.07+'px', left: containerWidth*0.305+'px'}"
         type='video/mp4'
       >
@@ -45,22 +45,6 @@
             <span @click="switchVideo('symbolEditor')">Video</span>
           </div>
         </li>
-        <!-- <li class="card-item" :style="{margin: '0 2.5%',height: videoWidth*0.6}">
-          <img src="../assets/kairoz.png" alt="">
-          <h5>Kairoz</h5>
-          <div class="card-btn-area">
-            <span class="disabled">Website</span>
-            <span @click="switchVideo('kairoz')">Video</span>
-          </div>
-        </li>
-        <li class="card-item" :style="{margin: '0 2.5%',height: videoWidth*0.6}">
-          <img src="../assets/kairoz.png" alt="">
-          <h5>Kairoz</h5>
-          <div class="card-btn-area">
-            <span class="disabled">Website</span>
-            <span @click="switchVideo('kairoz')">Video</span>
-          </div>
-        </li> -->
       </ul>
     </div>
     <div class="footer">
@@ -88,8 +72,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.containerWidth = this.$refs.container.offsetWidth;
-      this.videoWidth = this.$refs.container.offsetWidth * 0.39;
-      console.log(this.$refs.container.offsetWidth)
+      this.videoWidth = this.$refs.container.offsetWidth * 0.38;
     });
   },
   methods: {
@@ -149,7 +132,6 @@ export default {
   justify-content: space-between;
   margin-bottom: 50px;
   width: 26%;
-  /* height: 100%; */
   border-radius: 6px;
   box-shadow: 0 0 8px #aaa;
   background-color: rgba(255, 255, 255, .8);
@@ -160,8 +142,11 @@ export default {
 }
 .card-item img {
   width: 100%;
-  height: 50%;
   border-radius: 6px 6px 0 0;
+}
+.card-item h5 {
+  height: 40px;
+  line-height: 40px;
 }
 .card-btn-area {
   width: 100%;
